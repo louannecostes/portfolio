@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import reactsvg from '../assets/react.svg'
+import { Link } from 'react-router-dom';
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between flex-wrap p-6">
+    <nav className="flex items-center justify-around flex-wrap p-6 relative z-20 text-white">
       <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">
         <img src={reactsvg} className="w-100 h-10 mr-2" alt="Logo" />
       </div>
@@ -32,19 +33,19 @@ export const Navbar = () => {
       <div
         className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`}
       >
-        <div className="text-sm lg:flex-grow lg:text-end text-end">
-          <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-            First Link
-          </a>
-          <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-            Second Link
-          </a>
-          <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+        <div className="text-sm lg:flex-grow lg:text-center text-center">
+        <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+            Home
+          </Link>
+          <Link to="/projects" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+            Projects
+          </Link>
+          <Link to="/third-link" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
             Third Link
-          </a>
-          <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+          </Link>
+          <Link to="/fourth-link" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
             Fourth Link
-          </a>
+          </Link>
         </div>
         <div>
           <button className="inline-flex items-center bg-amber-500 border-0 py-2 px-4 text-white">
